@@ -1,0 +1,10 @@
+export const HEADER_TITLE = "Posh Properties";
+export const FAVORITES = "Favorites";
+export const DEFAULT_PROPERTY_IMAGE_URL = "/assets/images/default-image.jpg";
+export const BUTTON_TITLE = "Click to bookmark this property";
+export const BASE_URL = "https://mr0.homeflow.co.uk";
+export const LOADING = "Loading...";
+export const NOT_FOUND = "No property found with the search criteria";
+export const PLACEHOLDER = "Enter a search term";
+export const NO_FAVORITE_PLACES = "No Favorite Properties yet";
+export const BACK_TO_HOME_PAGE = "Back to Home Page";
