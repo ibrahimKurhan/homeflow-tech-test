@@ -7,7 +7,7 @@ import { PropertiesContext } from "providers/global-provider";
 
 const PropertyList = () => {
   const { filteredProperties, saveProperty } = useContext(PropertiesContext);
-  const notFoundText = filteredProperties?.length === 0 && (
+  const NotFoundText = filteredProperties?.length === 0 && (
     <StyledNotFoundMessage>{NOT_FOUND}</StyledNotFoundMessage>
   );
 
@@ -22,7 +22,7 @@ const PropertyList = () => {
           />
         ))}
       </StyledContainer>
-      {notFoundText}
+      {NotFoundText}
     </Fragment>
   );
 };

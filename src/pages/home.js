@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, Fragment } from "react";
 import { PropertiesContext } from "providers/global-provider";
 import { LOADING } from "constants";
 import { StyleLoader } from "styled-components/app";
@@ -7,9 +7,9 @@ import PropertyList from "components/properties";
 const Home = () => {
   const { isLoading } = useContext(PropertiesContext);
   return (
-    <div>
+    <Fragment>
       {isLoading ? <StyleLoader>{LOADING}</StyleLoader> : <PropertyList />}
-    </div>
+    </Fragment>
   );
 };
 

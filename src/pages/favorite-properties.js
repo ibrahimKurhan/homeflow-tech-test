@@ -13,7 +13,7 @@ const FavoriteProperties = () => {
   const { filteredSavedProperties, saveProperty } =
     useContext(PropertiesContext);
 
-  const notFoundText = filteredSavedProperties?.length === 0 && (
+  const NotFoundText = filteredSavedProperties?.length === 0 && (
     <StyledNotFoundMessage>{NO_FAVORITE_PLACES}</StyledNotFoundMessage>
   );
 
@@ -24,7 +24,6 @@ const FavoriteProperties = () => {
           {BACK_TO_HOME_PAGE}
         </StyledLink>
       </StyledLinkContainer>
-
       <StyledContainer>
         {filteredSavedProperties?.map((property) => (
           <PropertyCard
@@ -34,7 +33,7 @@ const FavoriteProperties = () => {
           />
         ))}
       </StyledContainer>
-      {notFoundText}
+      {NotFoundText}
     </Fragment>
   );
 };

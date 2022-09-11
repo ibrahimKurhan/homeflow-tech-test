@@ -14,22 +14,21 @@ import { ThemeContext } from "styled-components";
 const PropertyCard = ({ property, saveProperty }) => {
   const themeContext = useContext(ThemeContext);
   const { photos, display_address, price, property_id, selected } = property;
-  const color = selected ? `${themeContext.red}` : `${themeContext.yellow}`;
+  const color = selected ? themeContext.red : themeContext.yellow;
+  const imageUrl = `${BASE_URL}/${photos[0]}`;
+  const handleClick = () => saveProperty(property_id);
 
   return (
     <StyledWrapper>
       <ImageWithFallback
-        src={`${BASE_URL}/${photos[0]}`}
+        src={imageUrl}
         alt={display_address}
         fallback={DEFAULT_PROPERTY_IMAGE_URL}
       />
       <StyledParagraph>{price}</StyledParagraph>
       <StyledParagraph>{display_address}</StyledParagraph>
-      <StyledButton
-        onClick={() => saveProperty(property_id)}
-        title={BUTTON_TITLE}
-      >
-        <FaBookmark color={color} size={`${themeContext.buttonSize}`} />
+      <StyledButton onClick={handleClick} title={BUTTON_TITLE}>
+        <FaBookmark color={color} size={themeContext.buttonSize} />
       </StyledButton>
     </StyledWrapper>
   );
